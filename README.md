@@ -12,7 +12,7 @@ npm install swagger-es6 --dev
 
 ## Using NodeJS file
 
-````javascript
+```javascript
 const swaggerGen = require('swagger-es6')
 const jsonData = require('../api-docs.json')
 const fs = require('fs')
@@ -25,19 +25,21 @@ let opt = {
 }
 const codeResult = swaggerGen(opt)
 fs.writeFileSync(path.join(__dirname, '../dist/api.js'), codeResult)
+```
 
 # Generated client usage
 
-In JS main file set API domain
+In JS main file set API domain:
+
 ```javascript
 import { setDomain } from './lib/api-client.js'
 const server = "http://localhost:3000/api";
 setDomain(server)
-````
+```
 
 Import API function into JS component, for example to log in
 
-````javascript
+```javascript
 import { user_login as userLogin } from '../lib/api-client.js'
 
 userLogin({
@@ -47,7 +49,8 @@ userLogin({
   }
 }).then(function (response) {
   console.log(response.data) // {id: "<token>", ttl: 1209600, created: "2017-01-01T00:00:00.000Z", userId: 1}
-})```
+})
+```
 
 Using authentication header:
 
@@ -58,7 +61,8 @@ fetchClients({
   xAccessToken: 'some_very_secure_token'
 }).then(function (response) {
   console.log(response.data) // [{ name: 'Jon', age: 64 }, { name: 'Ada', age: 24 }, { name: 'Alan', age: 38 }]
-})```
+})
+```
 
 All requests use **axios** module with promise, for more information about that follow axios documentation
 
@@ -69,4 +73,3 @@ All requests use **axios** module with promise, for more information about that 
 # License
 
 [MIT](https://opensource.org/licenses/MIT)
-````
