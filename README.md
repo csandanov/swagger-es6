@@ -1,16 +1,12 @@
-# swagger-es6
+# Swagger.json to ES6 Client Generator
 
-Swagger.json to ES6 Client Generator
-
-# Installation
+## Installation
 
 ```shell
 npm install swagger-es6 --dev
 ```
 
-# Generate
-
-## Using NodeJS file
+## Generate using NodeJS file
 
 ```javascript
 const swaggerGen = require('swagger-es6')
@@ -27,7 +23,7 @@ const codeResult = swaggerGen(opt)
 fs.writeFileSync(path.join(__dirname, '../dist/api.js'), codeResult)
 ```
 
-# Generated client usage
+## Generated client usage
 
 In JS main file set API domain:
 
@@ -66,10 +62,10 @@ fetchClients({
 
 All requests use **axios** module with promise, for more information about that follow axios documentation
 
-# Links
+## Links
  - [swagger-js-codegen](https://github.com/wcandillon/swagger-js-codegen)
  - [axios](https://www.npmjs.com/package/axios)
 
-# License
+## License
 
 [MIT](https://opensource.org/licenses/MIT)
